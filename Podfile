@@ -9,5 +9,7 @@ target 'test' do
 	
 	pod 'Mapbox-iOS-SDK'
 
+	pod 'MapboxNavigation', '~> 0.10'
 
+	
 end
