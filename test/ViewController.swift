@@ -13,6 +13,7 @@ import MapboxNavigation
 import MapboxDirections
 
 
+
 class ViewController: UIViewController , MGLMapViewDelegate , LocationServiceDelegate{
     
     var mapView: NavigationMapView!
@@ -66,12 +67,13 @@ class ViewController: UIViewController , MGLMapViewDelegate , LocationServiceDel
         let setDestination = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
         
         
+        mapView.isScrollEnabled = false
         mapView.addAnnotations(pointAnnotations)
         mapView.addGestureRecognizer(setDestination)
         
         LocationService.sharedInstance.delegate = self
-        LocationService.sharedInstance.startUpdatingLocation()
         LocationService.sharedInstance.cleanValuesInfo()
+        LocationService.sharedInstance.startUpdatingLocation()
     }
     
     

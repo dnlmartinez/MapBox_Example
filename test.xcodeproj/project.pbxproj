@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BB714F899FD53DFBFFAC450 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA73C27C6D49B424147121D /* Pods_test.framework */; };
+		E9305B2C20549A9A00CF1266 /* CarPlayHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */; };
 		E94D8E0D2054589700F8CC77 /* Manuel_de_castro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */; };
 		E94D8E0F205459E200F8CC77 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */; };
 		E95DD3C62049F0F000DA738B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD3C52049F0F000DA738B /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 		2D62282D350C21949AF7E68E /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		2DA73C27C6D49B424147121D /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4627752C17524A83A9D5D0A8 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
+		E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CarPlayHelper.framework; sourceTree = "<group>"; };
 		E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Manuel_de_castro.gpx; sourceTree = "<group>"; };
 		E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
 		E95DD3C22049F0F000DA738B /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB714F899FD53DFBFFAC450 /* Pods_test.framework in Frameworks */,
+				E9305B2C20549A9A00CF1266 /* CarPlayHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 		E95DD3C42049F0F000DA738B /* test */ = {
 			isa = PBXGroup;
 			children = (
+				E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */,
 				E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */,
 				E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */,
 				E95DD3C52049F0F000DA738B /* AppDelegate.swift */,
@@ -389,6 +393,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8B69224RVC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test",
+				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmg;
@@ -407,6 +415,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8B69224RVC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test",
+				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmg;

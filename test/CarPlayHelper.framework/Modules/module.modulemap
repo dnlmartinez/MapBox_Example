@@ -1,0 +1,6 @@
+framework module CarPlayHelper {
+  umbrella header "CarPlayHelper.h"
+
+  export *
+  module * { export * }
+}

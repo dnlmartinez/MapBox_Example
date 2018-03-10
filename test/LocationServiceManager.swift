@@ -127,15 +127,30 @@ class LocationService: NSObject, CLLocationManagerDelegate
         }
         
         if (location.horizontalAccuracy > 0) {
-            updateLocationInfo(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, speed: location.speed, direction: location.course)
+            
+            if lastLocation != nil{
+            let distancechanged = locations.last!.distance(from: lastLocation)
+            let sinceLastUpdate = (location.timestamp).timeIntervalSince(lastLocation.timestamp)
+            let calculatedSpeed = distancechanged / sinceLastUpdate
+            
+            NSLog("SPEED --> \(calculatedSpeed)")
+                
+                updateLocationInfo(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, speed:calculatedSpeed , direction: location.course)
+            }
+            
         }
         if lastLocation != nil {
             traveledDistance += lastLocation.distance(from: locations.last!)
+            
+            
+                addTotalDistance(value: String.localizedStringWithFormat("%.0f Metros", lastLocation.distance(from: locations.last!)))
+            
                 if traveledDistance < 1609 {
-                    let tdMeter = traveledDistance
+                    let tdMeter = traveledDistance / 1.6
+                    
                     totalDist = String.localizedStringWithFormat("%.0f Metros", tdMeter)
                 } else if traveledDistance > 1609 {
-                    let tdKm = traveledDistance / 1000
+                    let tdKm = traveledDistance / 1609
                     totalDist = String.localizedStringWithFormat("%0.1f Kilometros", tdKm)
                 }
         }
@@ -144,7 +159,6 @@ class LocationService: NSObject, CLLocationManagerDelegate
         currentLocation = location
         updateLocation(location)
     }
-    
     
     func updateLocationInfo(latitude: CLLocationDegrees, longitude: CLLocationDegrees, speed: CLLocationSpeed, direction: CLLocationDirection) {
         
@@ -171,7 +185,8 @@ class LocationService: NSObject, CLLocationManagerDelegate
                                     "speed:" : speedToKPH,
                                     "lowSpeed:" : lowSpeedValue,
                                     "hightSpeed:" : highSpeedValue,
-                                    "yaw:" : dir
+                                    "yaw:" : dir,
+                                    "totalDistance" : totalDistAlways
                                     ]
         
         notifyLocationChangedInfo(info)
@@ -187,41 +202,63 @@ class LocationService: NSObject, CLLocationManagerDelegate
     
     private func addTotalDistance(value: String){
         
-        var numberTotal : NSNumber!
-        var number : NSNumber!
+        var numberTotal : NSNumber = NSNumber()
+        var number : NSNumber = NSNumber()
+        var totalisKM : Bool = false
+        var actuKM : Bool = false
+        var value = value
         
-        
-        if totalDistAlways.contains("Kilometros"){
-            totalDistAlways.replacingOccurrences(of: " Kilometros", with: "")
-        
-            numberTotal =
-            
-        }else if totalDistAlways.contains("Metros"){
-
-            totalDistAlways.replacingOccurrences(of: " Metros", with: "")
-            
-            numberTotal =
-        }
-        
-        
+        NSLog("Value -1-\(value)")
         
         
         ////
-     
-        if value.contains("Kilometros"){
         
-            value.replacingOccurrences(of: " Kilometros", with: "")
-            
-            
-            totalDistAlways = ""
+        if value.contains("Kilometros"){
+            value = value.replacingOccurrences(of: " Kilometros", with: "")
+            if let myInteger = Int(value) {
+                number = NSNumber(value:myInteger)
+                actuKM = true
+            }
         }else if value.contains("Metros"){
-            
-            value.replacingOccurrences(of: " Metros", with: "")
-            
-            
-            totalDistAlways = ""
+            value = value.replacingOccurrences(of: " Metros", with: "")
+            if let myInteger = Int(value) {
+                number = NSNumber(value:myInteger)
+            }
         }
         
+        
+        
+        /////
+        
+        if totalDistAlways.contains("Kilometros"){
+            totalDistAlways = totalDistAlways.replacingOccurrences(of: " Kilometros", with: "")
+            if let myInteger = Int(totalDistAlways) {
+                numberTotal = NSNumber(value:myInteger)
+                totalisKM = true
+            }
+        }else if totalDistAlways.contains("Metros"){
+            totalDistAlways = totalDistAlways.replacingOccurrences(of:" Metros", with: "")
+            if let myInteger = Int(totalDistAlways) {
+                numberTotal = NSNumber(value:myInteger)
+            }
+        }
+        
+        
+        NSLog("Number Dist -1-\(number)")
+        NSLog("Total Dist -1-\(totalDistAlways)")
+        
+        /////
+        if actuKM && totalisKM {
+            let  totalValueDistance : Int = number.intValue + numberTotal.intValue
+            totalDistAlways = String.localizedStringWithFormat("%i Kilometros", totalValueDistance)
+        }else if !actuKM && !totalisKM {
+            let  totalValueDistance : Int = number.intValue + numberTotal.intValue
+            totalDistAlways = String.localizedStringWithFormat("%i Metros", totalValueDistance)
+        }else if !actuKM && totalisKM {
+            let valueKM : Int = numberTotal.intValue
+            let valueMe : Int = number.intValue
+            totalDistAlways = String.localizedStringWithFormat("%i.%i Kilometros", valueKM , valueMe)
+        }
     }
     
     //MARK: Private function
