@@ -13,8 +13,8 @@ import MapboxNavigation
 import MapboxDirections
 
 
-class ViewController: UIViewController , MGLMapViewDelegate{
-
+class ViewController: UIViewController , MGLMapViewDelegate , LocationServiceDelegate{
+    
     var mapView: NavigationMapView!
     var directionsRoute: Route?
     
@@ -69,8 +69,11 @@ class ViewController: UIViewController , MGLMapViewDelegate{
         mapView.addAnnotations(pointAnnotations)
         mapView.addGestureRecognizer(setDestination)
         
-    
+        LocationService.sharedInstance.delegate = self
+        LocationService.sharedInstance.startUpdatingLocation()
+        LocationService.sharedInstance.cleanValuesInfo()
     }
+    
     
     func calculateRoute(from origin: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping (Route?, Error?) -> ()) {
         
@@ -203,14 +206,21 @@ class ViewController: UIViewController , MGLMapViewDelegate{
         self.present(navigationViewController, animated: true, completion: nil)
     }
     
+    
+    ///MARK: Location Manager
+    func tracingLocation(_ currentLocation: CLLocation) {
+        NSLog("----- INFO ----- \n \(currentLocation.coordinate) \n")
+    }
+    
+    func tracingLocationChangedInfo(_ infoLocation: NSDictionary) {
+        NSLog("----- LOCATION COORDINATES  ----- \n \(infoLocation) \n")
+    }
 }
 
 
 
-
-
-
 class CustomAnnotationView: MGLAnnotationView {
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         scalesWithViewingDistance = false
@@ -219,7 +229,6 @@ class CustomAnnotationView: MGLAnnotationView {
         layer.borderWidth = 2
         layer.borderColor = UIColor.white.cgColor
     }
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
