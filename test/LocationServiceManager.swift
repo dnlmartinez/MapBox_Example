@@ -28,19 +28,23 @@ class LocationService: NSObject, CLLocationManagerDelegate
     
     var currentLocation: CLLocation?
     var lastLocationRequest : CLLocation?
+    var last : CLLocation?
+    
     
     var delegate: LocationServiceDelegate?
     
     var lowSpeedValue : String = "0 Km/h"
     var highSpeedValue : String = "0 Km/h"
     var totalDist : String = "0 Metros"
-    var totalDistAlways : String = "0 Metros"
     
+    var magneticH : String = " "
+    var totalDistAlways : Double = 0.0
+    var votesAvg : Int = 0
     var startLocation:CLLocation!
     var lastLocation: CLLocation!
     var traveledDistance:Double = 0
-    var arrayMPH: [Double]! = []
-    var arrayKPH: [Double]! = []
+    var arrayMPH: [Int] = [Int]()
+    var arrayKPH: [Int] = [Int]()
     
     override init()
     {
@@ -56,6 +60,14 @@ class LocationService: NSObject, CLLocationManagerDelegate
         {
             locationManager.requestAlwaysAuthorization()
         }
+        
+        if (CLLocationManager.headingAvailable()) {
+            locationManager.headingFilter = kCLHeadingFilterNone
+            locationManager.startUpdatingHeading()
+            locationManager.headingOrientation = .landscapeRight
+        }
+        
+        
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 5
@@ -114,7 +126,10 @@ class LocationService: NSObject, CLLocationManagerDelegate
     func cleanValuesInfo() {
         lowSpeedValue = "0 Km/h"
         highSpeedValue  = "0 Km/h"
-        totalDist  = "0 Metros"
+        votesAvg = 0
+        traveledDistance = 0.0
+        arrayMPH = [Int]()
+        arrayKPH = [Int]()
     }
     
     
@@ -132,25 +147,27 @@ class LocationService: NSObject, CLLocationManagerDelegate
             let distancechanged = locations.last!.distance(from: lastLocation)
             let sinceLastUpdate = (location.timestamp).timeIntervalSince(lastLocation.timestamp)
             let calculatedSpeed = distancechanged / sinceLastUpdate
-            
-            NSLog("SPEED --> \(calculatedSpeed)")
                 
-                updateLocationInfo(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, speed:calculatedSpeed , direction: location.course)
+            updateLocationInfo(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, speed:calculatedSpeed , direction: location.course)
             }
             
         }
+        
         if lastLocation != nil {
+            
+            let oldtraveledDistance = traveledDistance
             traveledDistance += lastLocation.distance(from: locations.last!)
+            let diff = traveledDistance - oldtraveledDistance
+
+            totalDistAlways += diff
             
-            
-                addTotalDistance(value: String.localizedStringWithFormat("%.0f Metros", lastLocation.distance(from: locations.last!)))
-            
-                if traveledDistance < 1609 {
-                    let tdMeter = traveledDistance / 1.6
-                    
+                if traveledDistance < 1000 {
+                    let tdMeter = traveledDistance
                     totalDist = String.localizedStringWithFormat("%.0f Metros", tdMeter)
-                } else if traveledDistance > 1609 {
-                    let tdKm = traveledDistance / 1609
+                    
+                } else if traveledDistance > 1000 {
+                    
+                    let tdKm = traveledDistance / 1000
                     totalDist = String.localizedStringWithFormat("%0.1f Kilometros", tdKm)
                 }
         }
@@ -164,102 +181,67 @@ class LocationService: NSObject, CLLocationManagerDelegate
         
         var speedToKPH = (speed * 3.6)
         
-        
-        let val = ((direction / 22.5) + 0.5);
-        var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-        let dir = arr[Int(val / 16)]
-        
         if (speedToKPH > 0) {
-            NSLog("speedToKPH  %.0f km/h", speedToKPH)
-            arrayKPH.append(speedToKPH)
-            lowSpeedValue =  "\(arrayKPH.min)"
-            highSpeedValue = "\(arrayKPH.max)"
+            arrayKPH.append(Int(speedToKPH))
+            lowSpeedValue =  String.localizedStringWithFormat("%i Km/h", arrayKPH.min()!)
+            highSpeedValue = String.localizedStringWithFormat("%i Km/h", arrayKPH.max()!)
             avgSpeed()
             
         } else {
             speedToKPH = 0.0
         }
     
+        let Speed = String.localizedStringWithFormat("%i", Int(speedToKPH))
+        
         let info : NSDictionary = [
-                                    "distance:" : totalDist,
-                                    "speed:" : speedToKPH,
-                                    "lowSpeed:" : lowSpeedValue,
-                                    "hightSpeed:" : highSpeedValue,
-                                    "yaw:" : dir,
+                                    "distance" : totalDist,
+                                    "speed" : Speed,
+                                    "lowSpeed" : lowSpeedValue,
+                                    "hightSpeed" : highSpeedValue,
+                                    "speedAvg" : votesAvg,
+                                    "direction" : magneticH,
                                     "totalDistance" : totalDistAlways
                                     ]
         
         notifyLocationChangedInfo(info)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
+        
+        let value = Int(heading.magneticHeading.binade)
+        
+        if value > 0 && value < 20 {
+            magneticH = "N"
+        }
+        if value > 70 && value < 110 {
+            magneticH = "E"
+        }
+        if value > 160 && value < 200 {
+            magneticH = "S"
+        }
+        if value > 250 && value < 290 {
+            magneticH = "W"
+        }
+        if value > 20 && value < 70  {
+            magneticH = "NE"
+        }
+        if value > 110 && value < 160 {
+            magneticH = "SE"
+        }
+        if value > 200 && value < 250  {
+            magneticH = "SW"
+        }
+        if value > 290 {
+            magneticH = "NW"
+        }
+    }
+    
     
     func avgSpeed(){
-        let votes:[Double] = arrayKPH
-        let votesAvg = votes.reduce(0, +) / Double(votes.count)
-        NSLog("votesAvg  %.0f", votesAvg)
+        let votes:[Int] = arrayKPH
+        votesAvg = votes.reduce(0, +) / votes.count
     }
     
-    
-    private func addTotalDistance(value: String){
-        
-        var numberTotal : NSNumber = NSNumber()
-        var number : NSNumber = NSNumber()
-        var totalisKM : Bool = false
-        var actuKM : Bool = false
-        var value = value
-        
-        NSLog("Value -1-\(value)")
-        
-        
-        ////
-        
-        if value.contains("Kilometros"){
-            value = value.replacingOccurrences(of: " Kilometros", with: "")
-            if let myInteger = Int(value) {
-                number = NSNumber(value:myInteger)
-                actuKM = true
-            }
-        }else if value.contains("Metros"){
-            value = value.replacingOccurrences(of: " Metros", with: "")
-            if let myInteger = Int(value) {
-                number = NSNumber(value:myInteger)
-            }
-        }
-        
-        
-        
-        /////
-        
-        if totalDistAlways.contains("Kilometros"){
-            totalDistAlways = totalDistAlways.replacingOccurrences(of: " Kilometros", with: "")
-            if let myInteger = Int(totalDistAlways) {
-                numberTotal = NSNumber(value:myInteger)
-                totalisKM = true
-            }
-        }else if totalDistAlways.contains("Metros"){
-            totalDistAlways = totalDistAlways.replacingOccurrences(of:" Metros", with: "")
-            if let myInteger = Int(totalDistAlways) {
-                numberTotal = NSNumber(value:myInteger)
-            }
-        }
-        
-        
-        NSLog("Number Dist -1-\(number)")
-        NSLog("Total Dist -1-\(totalDistAlways)")
-        
-        /////
-        if actuKM && totalisKM {
-            let  totalValueDistance : Int = number.intValue + numberTotal.intValue
-            totalDistAlways = String.localizedStringWithFormat("%i Kilometros", totalValueDistance)
-        }else if !actuKM && !totalisKM {
-            let  totalValueDistance : Int = number.intValue + numberTotal.intValue
-            totalDistAlways = String.localizedStringWithFormat("%i Metros", totalValueDistance)
-        }else if !actuKM && totalisKM {
-            let valueKM : Int = numberTotal.intValue
-            let valueMe : Int = number.intValue
-            totalDistAlways = String.localizedStringWithFormat("%i.%i Kilometros", valueKM , valueMe)
-        }
-    }
     
     //MARK: Private function
     

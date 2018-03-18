@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5BB714F899FD53DFBFFAC450 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA73C27C6D49B424147121D /* Pods_test.framework */; };
 		E9305B2C20549A9A00CF1266 /* CarPlayHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */; };
+		E9305B2F205DAC2200CF1266 /* CarPlayHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9305B32205DCBFF00CF1266 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9305B31205DCBFF00CF1266 /* UIColor.swift */; };
 		E94D8E0D2054589700F8CC77 /* Manuel_de_castro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */; };
 		E94D8E0F205459E200F8CC77 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */; };
 		E95DD3C62049F0F000DA738B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD3C52049F0F000DA738B /* AppDelegate.swift */; };
@@ -18,11 +20,26 @@
 		E95DD3D02049F0F000DA738B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95DD3CE2049F0F000DA738B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E9305B30205DAC2200CF1266 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9305B2F205DAC2200CF1266 /* CarPlayHelper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2D62282D350C21949AF7E68E /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		2DA73C27C6D49B424147121D /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4627752C17524A83A9D5D0A8 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CarPlayHelper.framework; sourceTree = "<group>"; };
+		E9305B31205DCBFF00CF1266 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Manuel_de_castro.gpx; sourceTree = "<group>"; };
 		E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
 		E95DD3C22049F0F000DA738B /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +102,7 @@
 		E95DD3C42049F0F000DA738B /* test */ = {
 			isa = PBXGroup;
 			children = (
+				E9305B31205DCBFF00CF1266 /* UIColor.swift */,
 				E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */,
 				E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */,
 				E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */,
@@ -111,6 +129,7 @@
 				E95DD3C02049F0F000DA738B /* Resources */,
 				4101190156C59048D53B1EE3 /* [CP] Embed Pods Frameworks */,
 				D2B3A8C465A691B8453CFE0B /* [CP] Copy Pods Resources */,
+				E9305B30205DAC2200CF1266 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94D8E0F205459E200F8CC77 /* LocationServiceManager.swift in Sources */,
+				E9305B32205DCBFF00CF1266 /* UIColor.swift in Sources */,
 				E95DD3C82049F0F000DA738B /* ViewController.swift in Sources */,
 				E95DD3C62049F0F000DA738B /* AppDelegate.swift in Sources */,
 			);
