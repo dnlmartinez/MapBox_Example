@@ -8,16 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		5BB714F899FD53DFBFFAC450 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA73C27C6D49B424147121D /* Pods_test.framework */; };
-		E9305B2C20549A9A00CF1266 /* CarPlayHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */; };
-		E9305B2F205DAC2200CF1266 /* CarPlayHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E905DC10206659B90036EEED /* JenaroDeLaFuente.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E905DC0F206659B90036EEED /* JenaroDeLaFuente.gpx */; };
+		E905DC12206677030036EEED /* CarPlayHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E98601A22066505000872554 /* CarPlayHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E905DC332066A8C20036EEED /* graphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC322066A8C20036EEED /* graphViewController.swift */; };
+		E905DC4E2066A9590036EEED /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC382066A9590036EEED /* ReferenceLineDrawingView.swift */; };
+		E905DC4F2066A9590036EEED /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC392066A9590036EEED /* BarDrawingLayer.swift */; };
+		E905DC502066A9590036EEED /* GradientDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3A2066A9590036EEED /* GradientDrawingLayer.swift */; };
+		E905DC512066A9590036EEED /* DotDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3B2066A9590036EEED /* DotDrawingLayer.swift */; };
+		E905DC522066A9590036EEED /* ScrollableGraphViewDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3C2066A9590036EEED /* ScrollableGraphViewDrawingLayer.swift */; };
+		E905DC532066A9590036EEED /* LineDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3D2066A9590036EEED /* LineDrawingLayer.swift */; };
+		E905DC542066A9590036EEED /* FillDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3E2066A9590036EEED /* FillDrawingLayer.swift */; };
+		E905DC552066A9590036EEED /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC3F2066A9590036EEED /* ScrollableGraphView.swift */; };
+		E905DC562066A9590036EEED /* ScrollableGraphViewDrawingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC412066A9590036EEED /* ScrollableGraphViewDrawingDelegate.swift */; };
+		E905DC572066A9590036EEED /* ScrollableGraphViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC422066A9590036EEED /* ScrollableGraphViewDataSource.swift */; };
+		E905DC582066A9590036EEED /* ReferenceLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC442066A9590036EEED /* ReferenceLines.swift */; };
+		E905DC592066A9590036EEED /* LabelPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC452066A9590036EEED /* LabelPool.swift */; };
+		E905DC5A2066A9590036EEED /* BarPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC472066A9590036EEED /* BarPlot.swift */; };
+		E905DC5B2066A9590036EEED /* GraphPointAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC492066A9590036EEED /* GraphPointAnimation.swift */; };
+		E905DC5C2066A9590036EEED /* GraphPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC4A2066A9590036EEED /* GraphPoint.swift */; };
+		E905DC5D2066A9590036EEED /* Plot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC4B2066A9590036EEED /* Plot.swift */; };
+		E905DC5E2066A9590036EEED /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC4C2066A9590036EEED /* LinePlot.swift */; };
+		E905DC5F2066A9590036EEED /* DotPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC4D2066A9590036EEED /* DotPlot.swift */; };
+		E905DC612067CC040036EEED /* MotionServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905DC602067CC040036EEED /* MotionServiceManager.swift */; };
+		E9119DD9206A5A32002DDCC0 /* mainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9119DD8206A5A32002DDCC0 /* mainMenuViewController.swift */; };
+		E9119DDB206A6437002DDCC0 /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = E9119DDA206A6436002DDCC0 /* video.MOV */; };
+		E9119DDD206EA9A9002DDCC0 /* tripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9119DDC206EA9A9002DDCC0 /* tripsViewController.swift */; };
+		E9119DE0206EAC9C002DDCC0 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9119DDF206EAC9C002DDCC0 /* CustomCollectionCell.swift */; };
+		E9119DE220700C2B002DDCC0 /* tripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9119DE120700C2B002DDCC0 /* tripDetailViewController.swift */; };
+		E9119DE420703D88002DDCC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9119DE320703D88002DDCC0 /* Date.swift */; };
 		E9305B32205DCBFF00CF1266 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9305B31205DCBFF00CF1266 /* UIColor.swift */; };
 		E94D8E0D2054589700F8CC77 /* Manuel_de_castro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */; };
 		E94D8E0F205459E200F8CC77 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */; };
+		E94F1DD0207A29B2009EC821 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1DCF207A29B2009EC821 /* settingViewController.swift */; };
+		E9522B4F20685DCD00ECC686 /* TripRecorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9522B4E20685DCD00ECC686 /* TripRecorderManager.swift */; };
+		E9522B532068676900ECC686 /* helper_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9522B522068676900ECC686 /* helper_1.swift */; };
+		E9522B5A2069878900ECC686 /* realmTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9522B562069878800ECC686 /* realmTrip.swift */; };
+		E9522B5B2069878900ECC686 /* realmTripModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9522B572069878800ECC686 /* realmTripModels.swift */; };
+		E9522B5D2069878900ECC686 /* dataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9522B592069878800ECC686 /* dataBaseManager.swift */; };
 		E95DD3C62049F0F000DA738B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD3C52049F0F000DA738B /* AppDelegate.swift */; };
-		E95DD3C82049F0F000DA738B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD3C72049F0F000DA738B /* ViewController.swift */; };
+		E95DD3C82049F0F000DA738B /* raceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD3C72049F0F000DA738B /* raceViewController.swift */; };
 		E95DD3CB2049F0F000DA738B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95DD3C92049F0F000DA738B /* Main.storyboard */; };
 		E95DD3CD2049F0F000DA738B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95DD3CC2049F0F000DA738B /* Assets.xcassets */; };
 		E95DD3D02049F0F000DA738B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95DD3CE2049F0F000DA738B /* LaunchScreen.storyboard */; };
+		E963E3612074148A00E87DC3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E963E3602074148A00E87DC3 /* UIView.swift */; };
+		E963E3632074185E00E87DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E963E3622074185E00E87DC3 /* UILabel.swift */; };
+		E98601A32066505000872554 /* CarPlayHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98601A22066505000872554 /* CarPlayHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9305B2F205DAC2200CF1266 /* CarPlayHelper.framework in Embed Frameworks */,
+				E905DC12206677030036EEED /* CarPlayHelper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,17 +73,53 @@
 		2D62282D350C21949AF7E68E /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		2DA73C27C6D49B424147121D /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4627752C17524A83A9D5D0A8 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
-		E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CarPlayHelper.framework; sourceTree = "<group>"; };
+		E905DC0F206659B90036EEED /* JenaroDeLaFuente.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JenaroDeLaFuente.gpx; sourceTree = "<group>"; };
+		E905DC322066A8C20036EEED /* graphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = graphViewController.swift; sourceTree = "<group>"; };
+		E905DC382066A9590036EEED /* ReferenceLineDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceLineDrawingView.swift; sourceTree = "<group>"; };
+		E905DC392066A9590036EEED /* BarDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3A2066A9590036EEED /* GradientDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3B2066A9590036EEED /* DotDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3C2066A9590036EEED /* ScrollableGraphViewDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphViewDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3D2066A9590036EEED /* LineDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3E2066A9590036EEED /* FillDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDrawingLayer.swift; sourceTree = "<group>"; };
+		E905DC3F2066A9590036EEED /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
+		E905DC412066A9590036EEED /* ScrollableGraphViewDrawingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphViewDrawingDelegate.swift; sourceTree = "<group>"; };
+		E905DC422066A9590036EEED /* ScrollableGraphViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphViewDataSource.swift; sourceTree = "<group>"; };
+		E905DC442066A9590036EEED /* ReferenceLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceLines.swift; sourceTree = "<group>"; };
+		E905DC452066A9590036EEED /* LabelPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPool.swift; sourceTree = "<group>"; };
+		E905DC472066A9590036EEED /* BarPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarPlot.swift; sourceTree = "<group>"; };
+		E905DC492066A9590036EEED /* GraphPointAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPointAnimation.swift; sourceTree = "<group>"; };
+		E905DC4A2066A9590036EEED /* GraphPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPoint.swift; sourceTree = "<group>"; };
+		E905DC4B2066A9590036EEED /* Plot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plot.swift; sourceTree = "<group>"; };
+		E905DC4C2066A9590036EEED /* LinePlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinePlot.swift; sourceTree = "<group>"; };
+		E905DC4D2066A9590036EEED /* DotPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotPlot.swift; sourceTree = "<group>"; };
+		E905DC602067CC040036EEED /* MotionServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionServiceManager.swift; sourceTree = "<group>"; };
+		E9119DD8206A5A32002DDCC0 /* mainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainMenuViewController.swift; sourceTree = "<group>"; };
+		E9119DDA206A6436002DDCC0 /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.MOV; sourceTree = "<group>"; };
+		E9119DDC206EA9A9002DDCC0 /* tripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripsViewController.swift; sourceTree = "<group>"; };
+		E9119DDF206EAC9C002DDCC0 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		E9119DE120700C2B002DDCC0 /* tripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripDetailViewController.swift; sourceTree = "<group>"; };
+		E9119DE320703D88002DDCC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E9305B31205DCBFF00CF1266 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Manuel_de_castro.gpx; sourceTree = "<group>"; };
 		E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
+		E94F1DCF207A29B2009EC821 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		E9522B4E20685DCD00ECC686 /* TripRecorderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRecorderManager.swift; sourceTree = "<group>"; };
+		E9522B522068676900ECC686 /* helper_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper_1.swift; sourceTree = "<group>"; };
+		E9522B562069878800ECC686 /* realmTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = realmTrip.swift; sourceTree = "<group>"; };
+		E9522B572069878800ECC686 /* realmTripModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = realmTripModels.swift; sourceTree = "<group>"; };
+		E9522B592069878800ECC686 /* dataBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataBaseManager.swift; sourceTree = "<group>"; };
 		E95DD3C22049F0F000DA738B /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95DD3C52049F0F000DA738B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E95DD3C72049F0F000DA738B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E95DD3C72049F0F000DA738B /* raceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raceViewController.swift; sourceTree = "<group>"; };
 		E95DD3CA2049F0F000DA738B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E95DD3CC2049F0F000DA738B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E95DD3CF2049F0F000DA738B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E95DD3D12049F0F000DA738B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E963E3602074148A00E87DC3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E963E3622074185E00E87DC3 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		E98601A22066505000872554 /* CarPlayHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CarPlayHelper.framework; sourceTree = "<group>"; };
+		E9B0EC282072C117002862F1 /* test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB714F899FD53DFBFFAC450 /* Pods_test.framework in Frameworks */,
-				E9305B2C20549A9A00CF1266 /* CarPlayHelper.framework in Frameworks */,
+				E98601A32066505000872554 /* CarPlayHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +152,136 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E905DC302066A7B90036EEED /* mainView */ = {
+			isa = PBXGroup;
+			children = (
+				E9119DDE206EAC8D002DDCC0 /* custom */,
+				E95DD3C72049F0F000DA738B /* raceViewController.swift */,
+				E9119DD8206A5A32002DDCC0 /* mainMenuViewController.swift */,
+				E9119DDC206EA9A9002DDCC0 /* tripsViewController.swift */,
+				E9119DE120700C2B002DDCC0 /* tripDetailViewController.swift */,
+				E94F1DCF207A29B2009EC821 /* settingViewController.swift */,
+			);
+			path = mainView;
+			sourceTree = "<group>";
+		};
+		E905DC312066A8A20036EEED /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC352066A9590036EEED /* graphCore */,
+				E905DC322066A8C20036EEED /* graphViewController.swift */,
+			);
+			path = graph;
+			sourceTree = "<group>";
+		};
+		E905DC352066A9590036EEED /* graphCore */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC362066A9590036EEED /* Classes */,
+			);
+			path = graphCore;
+			sourceTree = "<group>";
+		};
+		E905DC362066A9590036EEED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC372066A9590036EEED /* Drawing */,
+				E905DC3F2066A9590036EEED /* ScrollableGraphView.swift */,
+				E905DC402066A9590036EEED /* Protocols */,
+				E905DC432066A9590036EEED /* Reference */,
+				E905DC462066A9590036EEED /* Plots */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E905DC372066A9590036EEED /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC382066A9590036EEED /* ReferenceLineDrawingView.swift */,
+				E905DC392066A9590036EEED /* BarDrawingLayer.swift */,
+				E905DC3A2066A9590036EEED /* GradientDrawingLayer.swift */,
+				E905DC3B2066A9590036EEED /* DotDrawingLayer.swift */,
+				E905DC3C2066A9590036EEED /* ScrollableGraphViewDrawingLayer.swift */,
+				E905DC3D2066A9590036EEED /* LineDrawingLayer.swift */,
+				E905DC3E2066A9590036EEED /* FillDrawingLayer.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		E905DC402066A9590036EEED /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC412066A9590036EEED /* ScrollableGraphViewDrawingDelegate.swift */,
+				E905DC422066A9590036EEED /* ScrollableGraphViewDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E905DC432066A9590036EEED /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC442066A9590036EEED /* ReferenceLines.swift */,
+				E905DC452066A9590036EEED /* LabelPool.swift */,
+			);
+			path = Reference;
+			sourceTree = "<group>";
+		};
+		E905DC462066A9590036EEED /* Plots */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC472066A9590036EEED /* BarPlot.swift */,
+				E905DC482066A9590036EEED /* Animation */,
+				E905DC4B2066A9590036EEED /* Plot.swift */,
+				E905DC4C2066A9590036EEED /* LinePlot.swift */,
+				E905DC4D2066A9590036EEED /* DotPlot.swift */,
+			);
+			path = Plots;
+			sourceTree = "<group>";
+		};
+		E905DC482066A9590036EEED /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC492066A9590036EEED /* GraphPointAnimation.swift */,
+				E905DC4A2066A9590036EEED /* GraphPoint.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		E9119DDE206EAC8D002DDCC0 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				E905DC312066A8A20036EEED /* graph */,
+				E9119DDF206EAC9C002DDCC0 /* CustomCollectionCell.swift */,
+			);
+			path = custom;
+			sourceTree = "<group>";
+		};
+		E9522B512068674900ECC686 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E9522B522068676900ECC686 /* helper_1.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E9522B542069878800ECC686 /* dataBase */ = {
+			isa = PBXGroup;
+			children = (
+				E9522B552069878800ECC686 /* models */,
+				E9522B592069878800ECC686 /* dataBaseManager.swift */,
+			);
+			path = dataBase;
+			sourceTree = "<group>";
+		};
+		E9522B552069878800ECC686 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E9522B562069878800ECC686 /* realmTrip.swift */,
+				E9522B572069878800ECC686 /* realmTripModels.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		E95DD3B92049F0F000DA738B = {
 			isa = PBXGroup;
 			children = (
@@ -102,18 +303,76 @@
 		E95DD3C42049F0F000DA738B /* test */ = {
 			isa = PBXGroup;
 			children = (
-				E9305B31205DCBFF00CF1266 /* UIColor.swift */,
-				E9305B2B20549A9A00CF1266 /* CarPlayHelper.framework */,
-				E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */,
-				E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */,
+				E9119DDA206A6436002DDCC0 /* video.MOV */,
+				E9522B542069878800ECC686 /* dataBase */,
+				E99BE0712066500D0078BAE1 /* framework */,
+				E98601A52066506200872554 /* managers */,
+				E98601A42066505700872554 /* extensions */,
+				E98601A62066506D00872554 /* resources */,
+				E98601A72066507700872554 /* views */,
 				E95DD3C52049F0F000DA738B /* AppDelegate.swift */,
-				E95DD3C72049F0F000DA738B /* ViewController.swift */,
-				E95DD3C92049F0F000DA738B /* Main.storyboard */,
-				E95DD3CC2049F0F000DA738B /* Assets.xcassets */,
-				E95DD3CE2049F0F000DA738B /* LaunchScreen.storyboard */,
 				E95DD3D12049F0F000DA738B /* Info.plist */,
+				E9B0EC282072C117002862F1 /* test-Bridging-Header.h */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		E98601A42066505700872554 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9305B31205DCBFF00CF1266 /* UIColor.swift */,
+				E9119DE320703D88002DDCC0 /* Date.swift */,
+				E963E3602074148A00E87DC3 /* UIView.swift */,
+				E963E3622074185E00E87DC3 /* UILabel.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		E98601A52066506200872554 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				E9522B512068674900ECC686 /* Helpers */,
+				E94D8E0E205459E200F8CC77 /* LocationServiceManager.swift */,
+				E905DC602067CC040036EEED /* MotionServiceManager.swift */,
+				E9522B4E20685DCD00ECC686 /* TripRecorderManager.swift */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		E98601A62066506D00872554 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E95DD3CC2049F0F000DA738B /* Assets.xcassets */,
+				E94D8E0C2054589700F8CC77 /* Manuel_de_castro.gpx */,
+				E905DC0F206659B90036EEED /* JenaroDeLaFuente.gpx */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E98601A72066507700872554 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E98601A82066508600872554 /* layouts */,
+				E905DC302066A7B90036EEED /* mainView */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		E98601A82066508600872554 /* layouts */ = {
+			isa = PBXGroup;
+			children = (
+				E95DD3C92049F0F000DA738B /* Main.storyboard */,
+				E95DD3CE2049F0F000DA738B /* LaunchScreen.storyboard */,
+			);
+			path = layouts;
+			sourceTree = "<group>";
+		};
+		E99BE0712066500D0078BAE1 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E98601A22066505000872554 /* CarPlayHelper.framework */,
+			);
+			path = framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +410,7 @@
 				TargetAttributes = {
 					E95DD3C12049F0F000DA738B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -184,8 +444,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95DD3D02049F0F000DA738B /* LaunchScreen.storyboard in Resources */,
+				E905DC10206659B90036EEED /* JenaroDeLaFuente.gpx in Resources */,
 				E95DD3CD2049F0F000DA738B /* Assets.xcassets in Resources */,
 				E94D8E0D2054589700F8CC77 /* Manuel_de_castro.gpx in Resources */,
+				E9119DDB206A6437002DDCC0 /* video.MOV in Resources */,
 				E95DD3CB2049F0F000DA738B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,29 +480,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CollectionViewSlantedLayout/CollectionViewSlantedLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/MapboxCoreNavigation/MapboxCoreNavigation.framework",
-				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
-				"${BUILT_PRODUCTS_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework",
-				"${BUILT_PRODUCTS_DIR}/MapboxNavigation/MapboxNavigation.framework",
-				"${BUILT_PRODUCTS_DIR}/MapboxSpeech/MapboxSpeech.framework",
-				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
-				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
-				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SpotifyLogin/SpotifyLogin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewSlantedLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxCoreNavigation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxNavigation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxSpeech.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpotifyLogin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,10 +525,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9522B5B2069878900ECC686 /* realmTripModels.swift in Sources */,
+				E905DC562066A9590036EEED /* ScrollableGraphViewDrawingDelegate.swift in Sources */,
+				E905DC512066A9590036EEED /* DotDrawingLayer.swift in Sources */,
+				E905DC5F2066A9590036EEED /* DotPlot.swift in Sources */,
+				E9119DD9206A5A32002DDCC0 /* mainMenuViewController.swift in Sources */,
+				E905DC542066A9590036EEED /* FillDrawingLayer.swift in Sources */,
+				E905DC552066A9590036EEED /* ScrollableGraphView.swift in Sources */,
+				E9522B5D2069878900ECC686 /* dataBaseManager.swift in Sources */,
 				E94D8E0F205459E200F8CC77 /* LocationServiceManager.swift in Sources */,
+				E905DC4F2066A9590036EEED /* BarDrawingLayer.swift in Sources */,
+				E963E3612074148A00E87DC3 /* UIView.swift in Sources */,
+				E905DC522066A9590036EEED /* ScrollableGraphViewDrawingLayer.swift in Sources */,
 				E9305B32205DCBFF00CF1266 /* UIColor.swift in Sources */,
-				E95DD3C82049F0F000DA738B /* ViewController.swift in Sources */,
+				E905DC5A2066A9590036EEED /* BarPlot.swift in Sources */,
+				E905DC5B2066A9590036EEED /* GraphPointAnimation.swift in Sources */,
+				E905DC5D2066A9590036EEED /* Plot.swift in Sources */,
+				E905DC332066A8C20036EEED /* graphViewController.swift in Sources */,
+				E905DC5E2066A9590036EEED /* LinePlot.swift in Sources */,
+				E905DC5C2066A9590036EEED /* GraphPoint.swift in Sources */,
+				E9119DDD206EA9A9002DDCC0 /* tripsViewController.swift in Sources */,
+				E905DC582066A9590036EEED /* ReferenceLines.swift in Sources */,
+				E9119DE220700C2B002DDCC0 /* tripDetailViewController.swift in Sources */,
+				E963E3632074185E00E87DC3 /* UILabel.swift in Sources */,
+				E905DC532066A9590036EEED /* LineDrawingLayer.swift in Sources */,
+				E905DC592066A9590036EEED /* LabelPool.swift in Sources */,
+				E9119DE420703D88002DDCC0 /* Date.swift in Sources */,
+				E905DC502066A9590036EEED /* GradientDrawingLayer.swift in Sources */,
+				E9522B532068676900ECC686 /* helper_1.swift in Sources */,
+				E905DC572066A9590036EEED /* ScrollableGraphViewDataSource.swift in Sources */,
+				E9522B5A2069878900ECC686 /* realmTrip.swift in Sources */,
+				E95DD3C82049F0F000DA738B /* raceViewController.swift in Sources */,
+				E9522B4F20685DCD00ECC686 /* TripRecorderManager.swift in Sources */,
+				E9119DE0206EAC9C002DDCC0 /* CustomCollectionCell.swift in Sources */,
 				E95DD3C62049F0F000DA738B /* AppDelegate.swift in Sources */,
+				E905DC4E2066A9590036EEED /* ReferenceLineDrawingView.swift in Sources */,
+				E94F1DD0207A29B2009EC821 /* settingViewController.swift in Sources */,
+				E905DC612067CC040036EEED /* MotionServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,18 +699,22 @@
 			baseConfigurationReference = 2D62282D350C21949AF7E68E /* Pods-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8B69224RVC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
+					"$(PROJECT_DIR)/test/framework",
 				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,18 +725,21 @@
 			baseConfigurationReference = 4627752C17524A83A9D5D0A8 /* Pods-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8B69224RVC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
+					"$(PROJECT_DIR)/test/framework",
 				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,9 +7,14 @@ target 'test' do
 
   # Pods for test
 	
-	pod 'Mapbox-iOS-SDK'
+	  	pod 'Mapbox-iOS-SDK'
 
-	pod 'MapboxNavigation', '~> 0.10'
+	  	pod 'RealmSwift' 
 
+  		pod 'CollectionViewSlantedLayout', '~> 3.0'
+
+    	pod 'LTMorphingLabel'
+
+    	pod 'SpotifyLogin', '~> 0.1'
 	
 end
